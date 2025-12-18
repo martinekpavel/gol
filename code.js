@@ -1,24 +1,24 @@
-var rows = 24;
-var cols = 24;
+let rows = 15;
+let cols = 15;
 
-// initialize
-function initialize() {
+
+document.addEventListener('DOMContentLoaded', () => {
     createTable();
-}
+   
+});
 
-// lay out the board
 function createTable() {
-    var gridContainer = document.getElementById("gridContainer");
+    let gridContainer = document.getElementById("gridContainer");
     if (!gridContainer) {
         // throw error
         console.error("Problem: no div for the grid table!");
     }
-    var table = document.createElement("table");
+    let table = document.createElement("table");
 
-    for (var i = 0; i < rows; i++) {
-        var tr = document.createElement("tr");
-        for (var j = 0; j < cols; j++) {
-            var cell = document.createElement("td");
+    for (let i = 0; i < rows; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 0; j < cols; j++) {
+            let cell = document.createElement("td");
             cell.setAttribute("id", i + "_" + j);
             cell.setAttribute("class", "dead");
             tr.appendChild(cell);
@@ -27,7 +27,3 @@ function createTable() {
     }
     gridContainer.appendChild(table);
 }
-
-
-// start everything
-window.onload = initialize;
